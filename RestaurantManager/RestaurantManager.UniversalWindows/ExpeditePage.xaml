@@ -5,6 +5,8 @@
     xmlns:local="using:RestaurantManager.UniversalWindows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:RestaurantManager.Models"
+    DataContext="{StaticResource DataManager}"
     mc:Ignorable="d">
 
     <Grid Background="Black">
@@ -14,10 +16,8 @@
         </Grid.RowDefinitions>
         
         <Button Content="Clear All Orders" Foreground="White" FontSize="30" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        
-        <GridView>
-            <!-- logic's place for next assignment -->
-        </GridView>
+
+        <GridView Margin="20" ItemsSource="{Binding OrderItems}" />
 
         <AppBar>
             <AppBarButton Icon="Home" Label="Home" Click="AppBarButton_Click" />

@@ -5,6 +5,7 @@
     xmlns:local="using:RestaurantManager.UniversalWindows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{StaticResource DataManager}"
     mc:Ignorable="d">
 
     <Grid Background="Black">
@@ -26,14 +27,11 @@
         <Button Content="Add to Order" Foreground="White" Grid.Row="4" Grid.Column="0" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" />
         <Button Content="Submit Order" Foreground="White" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-        <ListView Grid.Row="1" Grid.RowSpan="2">
-            <!-- logic's place for next assignment -->
-        </ListView>
-        <ListView Grid.Row="2" Grid.Column="2">
-            <!-- logic's place for next assignment -->
-        </ListView>
+        <ListView Grid.Row="1" Grid.RowSpan="2" ItemsSource="{Binding MenuItems}" />
 
-        <AppBar Grid.ColumnSpan="3">
+        <ListView Grid.Row="2" Grid.Column="2" ItemsSource="{Binding CurrentlySelectedMenuItems}" />
+
+            <AppBar Grid.ColumnSpan="3">
             <AppBarButton Icon="Home" Label="Home" Click="AppBarButton_Click" />
         </AppBar>
     </Grid>
